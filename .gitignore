@@ -36,3 +36,9 @@ outputs/
 .coverage
 htmlcov/
 _silent_instrumental.wav
+
+# docs
+implementation_plan.md
+implementation_plan-v2.md
+implementation_plan-v3.md
+implementation_plan-callback.md
