@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audio-repair-node"
+version = "0.1.0"
+description = "AI vocal defect detection and repair routing for harsh/distortion issues"
+readme = "PRD.md"
+requires-python = ">=3.11"
+dependencies = [
+    "librosa>=0.10",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "soundfile>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov",
+]
+experiment = [
+    "silero-vad",
+]
+
+[project.scripts]
+audio-repair = "audio_repair.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

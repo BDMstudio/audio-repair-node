@@ -1,0 +1,43 @@
+{
+  "analysis": {
+    "frame_size": 2048,
+    "hop_size": 512
+  },
+  "vad": {
+    "enter_ratio": 1.25,
+    "exit_ratio": 1.10,
+    "median_window_frames": 31,
+    "min_active_ms": 120
+  },
+  "bands": {
+    "body_band": [200, 4000],
+    "harsh_band_main": [5000, 8000],
+    "harsh_band_wide": [4000, 10000],
+    "air_noise_band": [4000, 12000]
+  },
+  "thresholds": {
+    "harsh_high": 0.60,
+    "harsh_low": 0.45,
+    "distortion_high": 0.58,
+    "distortion_low": 0.42,
+    "min_harsh_duration_ms": 220,
+    "min_distortion_duration_ms": 180,
+    "merge_gap_ms_harsh": 120,
+    "merge_gap_ms_distortion": 100
+  },
+  "weights": {
+    "harsh_score": {
+      "harsh_band_ratio_main": 0.35,
+      "harsh_band_ratio_wide": 0.20,
+      "persistence_score": 0.20,
+      "collision_score": 0.15,
+      "centroid_drift": 0.10
+    },
+    "distortion_score": {
+      "flatness_air": 0.40,
+      "highband_ratio": 0.25,
+      "bandwidth_expansion": 0.20,
+      "breathy_penalty": 0.15
+    }
+  }
+}
